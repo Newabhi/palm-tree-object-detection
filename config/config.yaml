@@ -1,0 +1,16 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  dataset_identifier: riotulab/aerial-images-of-palm-trees
+  unzip_dir: artifacts/data_ingestion
+
+base_model:
+  root_dir: artifacts/base_model
+  base_model_path: artifacts/base_model/base_model.pth
+
+
+training:
+  root_dir: artifacts/training
+  trained_model_path: artifacts/training/model.pth
+  mlflow_uri: https://dagshub.com/aditya.prashant0/my-first-repo.mlflow
