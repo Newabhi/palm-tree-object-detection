@@ -75,7 +75,7 @@ The model was trained using the following configuration:
 - **Epochs**: 3
 - **Image Size**: 320
 
-The training process was tracked and logged using MLflow. The public MLflow dashboard for the results can be accessed via this [link](https://dagshub.com/franklinosei/palm-trees-counter.mlflow).
+The training process was tracked and logged using MLflow. The public MLflow dashboard for the results can be accessed via this [link](https://dagshub.com/aditya.prashant0/my-first-repo.mlflow)
 
 ## Metrics, Model Evaluation and Performance
 
@@ -146,7 +146,7 @@ The FastAPI-based API is containerized using Docker and configured to run on GPU
 
 ### Running the API Locally
 To run the API without Docker, follow these steps:
- 1. Download the model weight via this link: [palm-tree-counter](https://drive.google.com/file/d/1BUQYSwNvkHX5WmVfBN-3L9wgHuLxpe4L/view?usp=drive_link)
+ 1. Download the model weight via this link: [palm-tree-counter]()
  2. Place the downloaded model weight in the `models` directory.
  3. Run the API with the following command:
  ```bash
