@@ -1,0 +1,47 @@
+stages:
+  data_ingestion:
+    cmd: python src/palmTreesCounter/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/palmTreesCounter/pipeline/stage_01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/Palm-Counting-349images
+  
+  configure_base_model:
+    cmd: python src/palmTreesCounter/pipeline/stage_02_get_base_model.py
+    deps:
+      - src/palmTreesCounter/pipeline/stage_02_get_base_model.py
+      - config/config.yaml
+    params:
+      - NUM_CLASSES
+      - WEIGHTS
+    outs:
+      - artifacts/base_model
+
+  training:
+    cmd: python src/palmTreesCounter/pipeline/stage_03_model_trainer.py
+    deps:
+      - src/palmTreesCounter/pipeline/stage_03_model_trainer.py
+      - config/config.yaml
+      - artifacts/data_ingestion/Palm-Counting-349images
+      - artifacts/base_model
+    params:
+      - IMAGE_SIZE
+      - EPOCHS
+      - BATCH_SIZE
+      - LEARNING_RATE
+      - NUM_CLASSES
+    outs:
+      - artifacts/training/model.pth
+
+  evaluation:
+    cmd: python src/palmTreesCounter/pipeline/stage_04_model_evaluation.py
+    deps:
+      - src/palmTreesCounter/pipeline/stage_04_model_evaluation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/Palm-Counting-349images
+      - artifacts/training/model.pth
+    params:
+      - IMAGE_SIZE
+      - BATCH_SIZE
+      - NUM_CLASSES
