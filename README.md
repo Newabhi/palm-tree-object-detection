@@ -107,7 +107,7 @@ To run the API using Docker, follow these steps:
     In the root directory of your project, run the following command to build the Docker image:
     
     ```bash
-    docker build -t palm-tree-counter-api .
+    docker build -t Model-weight-api .
     ```
     
 2. **Run the Docker Container:**
@@ -115,7 +115,7 @@ To run the API using Docker, follow these steps:
     After building the image, run the container with the following command:
     
     ```bash
-    docker run -d -p 10000:10000 palm-tree-counter-api
+    docker run -d -p 10000:10000 Model-weight-api
     ```
     
     This will start the FastAPI server on `http://localhost:10000`.
