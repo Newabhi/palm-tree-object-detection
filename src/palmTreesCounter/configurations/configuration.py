@@ -8,15 +8,7 @@ class ConfigurationManager:
         self,
         config_filepath = CONFIG_FILE_PATH,
         params_filepath = PARAMS_FILE_PATH):
-        """
-        Initializes the ConfigurationManager with configuration and parameters file paths.
 
-        Args:
-            config_filepath (str, optional): Path to the configuration YAML file. 
-                                              Defaults to CONFIG_FILE_PATH.
-            params_filepath (str, optional): Path to the parameters YAML file. 
-                                             Defaults to PARAMS_FILE_PATH.
-        """
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
 
@@ -24,13 +16,7 @@ class ConfigurationManager:
 
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
-        """
-        Returns a DataIngestionConfig object containing the configuration 
-        parameters for data ingestion.
 
-        Returns:
-            DataIngestionConfig: Object with data ingestion configuration parameters.
-        """
 
         config = self.config.data_ingestion
         create_directories([config.root_dir])

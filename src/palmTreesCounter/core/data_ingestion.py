@@ -9,9 +9,6 @@ class DataIngestion:
         self.config = config
      
     def download_dataset(self)-> str:
-        '''
-        Fetch data from the Kaggle dataset and save it in the local directory
-        '''
 
         try: 
             dataset_identifier = self.config.dataset_identifier
