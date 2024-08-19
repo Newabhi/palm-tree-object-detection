@@ -91,9 +91,9 @@ The FastAPI-based API is containerized using Docker and configured to run on GPU
 
 ### Running the API Locally
 To run the API without Docker, follow these steps:
- 1. Download the model weight via this link: [palm-tree-counter]()
- 2. Place the downloaded model weight in the `models` directory.
- 3. Run the API with the following command:
+ 1. Download the model weight via this link: [Model-weight](https://drive.google.com/file/d/1VTqQGum3d1YIF5OLGTYmFHP5LWI52c87/view?usp=sharing)
+ 3. Place the downloaded model weight in the `models` directory.
+ 4. Run the API with the following command:
  ```bash
  uvicorn server:app --port 10000
  ```
